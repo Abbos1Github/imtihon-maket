@@ -1,0 +1,91 @@
+.hero {
+    height: 650px;
+    padding: 153px 0 153px 165px;
+    background-image: url(../../img/hero-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+  
+    &__content {
+        max-width: 500px;
+        overflow-x: visible;
+        h1 {
+            overflow-y: hidden;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 56px;
+            letter-spacing: -2.5px;
+            color: $white-color;
+        }
+        &-bottom {
+            position: relative;
+            overflow-x: visible;
+            padding-left: 10%;
+            p {
+                padding: 40px 0;
+                width: 100%;
+            }
+            &-path {
+                max-width: 202px;
+                position: absolute;
+                top: 40%;
+                left: -37%;
+                // width: 31%;
+            }
+            &-path2 {
+                max-width: 447px;
+                max-height: 338px;
+                position: absolute;
+                top: 40%;
+                right: -460px;
+                // width: 70%;
+            }
+        }
+       
+    }
+}
+@media screen and (max-width:1200px) {
+    .hero {
+        &__content {
+            padding: 153px auto;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            &-bottom {
+                padding: 0;
+                &-path {
+                    display: none;
+                }
+                &-path2 {
+                    top: 110%;
+                    left: -40%;
+                }
+            }
+        }
+    }
+}
+@include phone {
+    .hero {
+        height: 93vh;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__content {
+            max-width: 80%;
+            padding: 153px auto;
+            text-align: center;
+            h1 {
+                font-size: 40px;
+                line-height: 40px;
+            }
+            &-bottom {
+                padding: 0;
+                &-path2 {
+                    top: 90%;
+                    left: -120%;
+                }
+            }
+        }
+    }
+}

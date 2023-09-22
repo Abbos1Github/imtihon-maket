@@ -1,0 +1,76 @@
+.locate {
+    position: relative;
+    padding: 160px 165px;
+    @include centering;
+    flex-direction: row;
+    gap: 30px;
+    &__card {
+        text-align: left;
+        h4 {
+            padding: 38px 0 27px;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 28px;
+            color: $dark-blue;        
+        }
+        p {
+            height: 100px;
+            max-width: 350px;
+            color: $text-color;
+            text-align: left;
+        }
+    }
+
+    &__card:nth-child(3) {
+        background: #fff;
+    }
+    
+    &-img {
+        width: 974px;
+        position: absolute;
+        top: 200px;
+        left: 0;
+        z-index: -1;
+    }
+}
+@media screen and (max-width:1200px) {
+    .locate {
+        flex-direction: column;
+        &__card {
+            display: flex;
+            flex-direction: row;
+            gap: 79px;
+        }
+        &__card:nth-child(3) {
+            background: transparent;
+        }
+        &-img {
+           display: none;
+        }
+    }
+}
+@include phone {
+    .locate {
+        &__card {
+            gap: 24px;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            img {
+                width: 56px;
+                height: 56px;
+            }
+            h4 {
+                padding-top: 0;
+            }
+            
+            &-content {
+                p {
+                    text-align: center;
+                    width: 311px;
+                }
+            }
+        }
+        
+    }
+}

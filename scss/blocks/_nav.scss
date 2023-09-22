@@ -1,0 +1,95 @@
+.nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 19.9px 0;
+    &__menu {
+        @include centering;
+        justify-content: space-between;
+        &-remove, &-hamburger {
+            display: none;
+        }
+        &-left {
+            @include centering;
+            gap: 58px;
+            ul {
+                @include centering;
+                gap: 32px;
+                li a {
+                    color: $text-color;
+                }
+                li a:hover {
+                    color: $orange-color;
+                }
+            } 
+            
+        }
+    }
+}
+.nav-mobile, input {
+    display: none;
+}
+@include phone {
+    .nav {
+        &__menu {
+            ul {
+                display: none;
+            }
+            &-left {
+                margin: 0 auto;
+                label {
+                    display: block;
+                }
+            }
+            &-hamburger {
+                display: block;
+            }
+        }
+        button {
+            display: none;
+        }
+    }
+    input {
+        display: none;
+    }
+    .nav-mobile {
+        position: fixed;
+        top: 75px;
+        left: 0;
+        margin: 0;
+        height: 93vh;
+        width: 70vw;
+        background-color: $light-blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 64px 32px 24px;
+        transform: translate(-200%);
+        visibility: hidden;
+        transition: 0.5s ease;
+        -webkit-box-shadow: 220px 1px 0px 0px rgba(0,0,0,0.43);
+        -moz-box-shadow: 220px 1px 0px 0px rgba(0,0,0,0.43);
+        box-shadow: 220px 1px 0px 0px rgba(0,0,0,0.43);
+        z-index: 100;
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            li {
+                a {
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 25px;
+                    color: $white-color;                       
+                }
+            }
+        }
+        button {
+            margin-bottom: 24px;
+        }
+    }
+    .checkbox:checked ~ .nav-mobile {
+        transform: translate(0);
+        visibility: visible;  
+    }
+}
