@@ -173,7 +173,7 @@ p {
 .hero {
   height: 650px;
   padding: 153px 0 153px 165px;
-  background-image: url(../../img/hero-background.jpg);
+  background-image: url(../img/hero-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
